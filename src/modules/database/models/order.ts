@@ -5,8 +5,8 @@ import { Model } from 'objection';
 export class Order extends Model implements IOrder {
   @ApiProperty({ type: 'integer' })
   public id: number;
-  @ApiProperty({ type: 'string' })
-  public value: string;
+  @ApiProperty({ type: 'number' })
+  public value: number;
   @ApiProperty({ type: 'string' })
   public quantity: string;
   @ApiProperty({ type: 'string' })

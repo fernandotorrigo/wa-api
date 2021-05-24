@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsInt, IsNotEmpty, IsOptional, IsString, MaxLength, Min } from 'class-validator';
+import { IsInt, IsNotEmpty, IsNumber, IsOptional, IsString, MaxLength, Min } from 'class-validator';
 import { IOrder } from 'modules/database/interfaces/order';
 
 export class SaveValidator implements IOrder {
@@ -10,15 +10,14 @@ export class SaveValidator implements IOrder {
   public id?: number;
 
   @IsNotEmpty()
-  @IsString()
-  @MaxLength(50)
-  @ApiProperty({ required: true, type: 'string', maxLength: 50 })
-  public value: string;
+  @IsNumber()
+  @ApiProperty({ required: true, type: 'number' })
+  public value: number;
 
   @IsNotEmpty()
   @IsString()
-  @MaxLength(50)
-  @ApiProperty({ required: false, type: 'string', maxLength: 50 })
+  @MaxLength(150)
+  @ApiProperty({ required: false, type: 'string' })
   public quantity: string;
 
   @IsNotEmpty()

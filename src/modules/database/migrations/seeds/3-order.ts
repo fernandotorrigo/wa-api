@@ -3,7 +3,7 @@ import { IOrder } from 'modules/database/interfaces/order';
 
 export async function seed(knex: Knex): Promise<void> {
   const firstOrder: IOrder = {
-    value: '20',
+    value: 20,
     quantity: '1',
     description: 'primeiropedido',
     createdDate: new Date(),

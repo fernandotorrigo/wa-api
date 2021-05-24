@@ -1,8 +1,8 @@
 export interface IOrder {
   id?: number;
-  description: string;
-  value: string;
+  value: number;
   quantity: string;
+  description: string;
   createdDate?: Date;
   updatedDate?: Date;
 }
